@@ -1,8 +1,12 @@
+using EldenRingDamageCalculator.Enums;
+
 namespace EldenRingDamageCalculator.Models;
 
-public class Talisman
+public class ArmorPiece
 {
     public string Name { get; set; } = "";
+
+    public ArmorSlot Slot { get; set; }
 
     public string EffectDescription { get; set; } = "";
 

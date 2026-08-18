@@ -1,13 +1,18 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:EldenRingDamageCalculator.ViewModels"
+        xmlns:models="using:EldenRingDamageCalculator.Models"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        d:DesignWidth="800"
-        d:DesignHeight="450"
+        d:DesignWidth="900"
+        d:DesignHeight="800"
         x:Class="EldenRingDamageCalculator.Views.MainWindow"
         x:DataType="vm:MainViewModel"
+        Width="900"
+        Height="800"
+        MinWidth="700"
+        MinHeight="600"
         Icon="/Assets/avalonia-logo.ico"
         Title="Elden Ring Damage Calculator">
 
@@ -15,56 +20,389 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <StackPanel
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Spacing="12">
+    <ScrollViewer>
 
-        <!-- Título do programa -->
-        <TextBlock
-            Text="Elden Ring Damage Calculator"
-            FontSize="24"
-            FontWeight="Bold"
-            HorizontalAlignment="Center"/>
+        <StackPanel
+            Margin="30"
+            Spacing="25">
 
-        <!-- Nome do buff + porcentagem -->
-        <TextBlock
-            HorizontalAlignment="Center"
-            FontSize="18">
+            <!-- TÍTULO -->
+            <TextBlock
+                Text="Elden Ring Damage Calculator"
+                FontSize="30"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"/>
 
-            <Run Text="{Binding GoldenVow.Name}"/>
-            <Run Text=": "/>
-            <Run Text="{Binding GoldenVow.DamageBonusPercent}"/>
-            <Run Text="%"/>
 
-        </TextBlock>
+            <!-- ATRIBUTOS -->
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
 
-        <!-- Campo onde o usuário coloca o dano atual -->
-        <TextBlock
-            Text="Dano sem buff:"/>
+                <StackPanel Spacing="10">
 
-        <NumericUpDown
-            Value="{Binding BaseDamage}"
-            Minimum="0"
-            Increment="1"/>
+                    <TextBlock
+                        Text="Atributos"
+                        FontSize="22"
+                        FontWeight="Bold"/>
 
-        <!-- Botão que executa CalculateDamage() -->
-        <Button
-            Content="Calcular com Golden Vow"
-            Command="{Binding CalculateDamageCommand}"
-            HorizontalAlignment="Center"/>
+                    <TextBlock Text="Força"/>
 
-        <!-- Resultado -->
-        <TextBlock
-            Text="Dano final:"
-            FontWeight="Bold"/>
+                    <NumericUpDown
+                        Value="{Binding Stats.Strength}"
+                        Minimum="1"
+                        Maximum="99"/>
 
-        <TextBlock
-            Text="{Binding FinalDamage}"
-            FontSize="22"
-            FontWeight="Bold"
-            HorizontalAlignment="Center"/>
+                    <TextBlock Text="Destreza"/>
 
-    </StackPanel>
+                    <NumericUpDown
+                        Value="{Binding Stats.Dexterity}"
+                        Minimum="1"
+                        Maximum="99"/>
+
+                    <TextBlock Text="Inteligência"/>
+
+                    <NumericUpDown
+                        Value="{Binding Stats.Intelligence}"
+                        Minimum="1"
+                        Maximum="99"/>
+
+                    <TextBlock Text="Fé"/>
+
+                    <NumericUpDown
+                        Value="{Binding Stats.Faith}"
+                        Minimum="1"
+                        Maximum="99"/>
+
+                    <TextBlock Text="Arcano"/>
+
+                    <NumericUpDown
+                        Value="{Binding Stats.Arcane}"
+                        Minimum="1"
+                        Maximum="99"/>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <!-- ARMA -->
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
+
+                <StackPanel Spacing="10">
+
+                    <TextBlock
+                        Text="Arma"
+                        FontSize="22"
+                        FontWeight="Bold"/>
+
+                    <TextBlock Text="Arma equipada"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding Weapons}"
+                        SelectedItem="{Binding SelectedWeapon}"/>
+
+
+                    <TextBlock Text="Nível da arma"/>
+
+                    <NumericUpDown
+                        Value="{Binding WeaponUpgradeLevel}"
+                        Minimum="0"
+                        Maximum="25"/>
+
+
+                    <TextBlock Text="Cinza de Guerra"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding AshesOfWar}"
+                        SelectedItem="{Binding SelectedAshOfWar}"/>
+
+
+                    <TextBlock Text="Afinidade"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding Affinities}"
+                        SelectedItem="{Binding SelectedAffinity}"/>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <!-- TALISMÃS -->
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
+
+                <StackPanel Spacing="10">
+
+                    <TextBlock
+                        Text="Talismãs"
+                        FontSize="22"
+                        FontWeight="Bold"/>
+
+                    <TextBlock Text="Slot 1"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding Talismans}"
+                        SelectedItem="{Binding SelectedTalisman1}"/>
+
+
+                    <TextBlock Text="Slot 2"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding Talismans}"
+                        SelectedItem="{Binding SelectedTalisman2}"/>
+
+
+                    <TextBlock Text="Slot 3"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding Talismans}"
+                        SelectedItem="{Binding SelectedTalisman3}"/>
+
+
+                    <TextBlock Text="Slot 4"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding Talismans}"
+                        SelectedItem="{Binding SelectedTalisman4}"/>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <!-- BUFFS -->
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
+
+                <StackPanel Spacing="15">
+
+                    <TextBlock
+                        Text="Buffs"
+                        FontSize="22"
+                        FontWeight="Bold"/>
+
+
+                    <!-- AURA -->
+                    <TextBlock
+                        Text="Aura Buffs"
+                        FontSize="18"
+                        FontWeight="Bold"/>
+
+                    <ItemsControl ItemsSource="{Binding AuraBuffs}">
+
+                        <ItemsControl.ItemTemplate>
+
+                            <DataTemplate x:DataType="models:Buff">
+
+                                <CheckBox
+                                    IsChecked="{Binding IsSelected}"
+                                    Margin="0,4">
+
+                                    <StackPanel
+                                        Orientation="Horizontal"
+                                        Spacing="4">
+
+                                        <TextBlock Text="{Binding Name}"/>
+
+                                        <TextBlock Text=":"/>
+
+                                        <TextBlock
+                                            Text="{Binding DamageBonusPercent}"/>
+
+                                        <TextBlock Text="%"/>
+
+                                    </StackPanel>
+
+                                </CheckBox>
+
+                            </DataTemplate>
+
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+
+
+                    <!-- BODY -->
+                    <TextBlock
+                        Text="Body Buffs"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Margin="0,10,0,0"/>
+
+                    <ItemsControl ItemsSource="{Binding BodyBuffs}">
+
+                        <ItemsControl.ItemTemplate>
+
+                            <DataTemplate x:DataType="models:Buff">
+
+                                <CheckBox
+                                    IsChecked="{Binding IsSelected}"
+                                    Margin="0,4">
+
+                                    <StackPanel
+                                        Orientation="Horizontal"
+                                        Spacing="4">
+
+                                        <TextBlock Text="{Binding Name}"/>
+
+                                        <TextBlock Text=":"/>
+
+                                        <TextBlock
+                                            Text="{Binding DamageBonusPercent}"/>
+
+                                        <TextBlock Text="%"/>
+
+                                    </StackPanel>
+
+                                </CheckBox>
+
+                            </DataTemplate>
+
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <!-- ARMADURA -->
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
+
+                <StackPanel Spacing="10">
+
+                    <TextBlock
+                        Text="Armadura"
+                        FontSize="22"
+                        FontWeight="Bold"/>
+
+                    <TextBlock Text="Cabeça"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding HeadArmor}"
+                        SelectedItem="{Binding SelectedHeadArmor}"/>
+
+
+                    <TextBlock Text="Peitoral"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding ChestArmor}"
+                        SelectedItem="{Binding SelectedChestArmor}"/>
+
+
+                    <TextBlock Text="Braços"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding ArmArmor}"
+                        SelectedItem="{Binding SelectedArmArmor}"/>
+
+
+                    <TextBlock Text="Pernas"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding LegArmor}"
+                        SelectedItem="{Binding SelectedLegArmor}"/>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <!-- BOSS -->
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
+
+                <StackPanel Spacing="10">
+
+                    <TextBlock
+                        Text="Boss / Alvo"
+                        FontSize="22"
+                        FontWeight="Bold"/>
+
+                    <TextBlock Text="Boss"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding Bosses}"
+                        SelectedItem="{Binding SelectedBoss}"/>
+
+
+                    <TextBlock Text="Fase"/>
+
+                    <ComboBox
+                        ItemsSource="{Binding BossPhases}"
+                        SelectedItem="{Binding SelectedBossPhase}"/>
+
+                </StackPanel>
+
+            </Border>
+
+
+            <!-- CALCULADORA -->
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
+
+                <StackPanel Spacing="12">
+
+                    <TextBlock
+                        Text="Quick Damage Calculator"
+                        FontSize="22"
+                        FontWeight="Bold"/>
+
+                    <TextBlock
+                        Text="Dano sem buffs:"/>
+
+                    <NumericUpDown
+                        Value="{Binding BaseDamage}"
+                        Minimum="0"/>
+
+
+                    <Button
+                        Content="Calcular dano"
+                        Command="{Binding CalculateDamageCommand}"
+                        HorizontalAlignment="Center"
+                        Padding="25,10"/>
+
+
+                    <TextBlock
+                        Text="{Binding ValidationMessage}"
+                        TextWrapping="Wrap"/>
+
+
+                    <TextBlock
+                        Text="Dano final:"
+                        FontWeight="Bold"
+                        FontSize="18"/>
+
+                    <TextBlock
+                        Text="{Binding FinalDamage}"
+                        FontSize="28"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </StackPanel>
+
+    </ScrollViewer>
 
 </Window>
