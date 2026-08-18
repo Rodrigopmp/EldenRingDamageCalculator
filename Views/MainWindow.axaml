@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:EldenRingDamageCalculator.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
+        x:Class="EldenRingDamageCalculator.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Elden Ring Damage Calculator">
+
+    <Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Spacing="12">
+
+        <!-- Título do programa -->
+        <TextBlock
+            Text="Elden Ring Damage Calculator"
+            FontSize="24"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"/>
+
+        <!-- Nome do buff + porcentagem -->
+        <TextBlock
+            HorizontalAlignment="Center"
+            FontSize="18">
+
+            <Run Text="{Binding GoldenVow.Name}"/>
+            <Run Text=": "/>
+            <Run Text="{Binding GoldenVow.DamageBonusPercent}"/>
+            <Run Text="%"/>
+
+        </TextBlock>
+
+        <!-- Campo onde o usuário coloca o dano atual -->
+        <TextBlock
+            Text="Dano sem buff:"/>
+
+        <NumericUpDown
+            Value="{Binding BaseDamage}"
+            Minimum="0"
+            Increment="1"/>
+
+        <!-- Botão que executa CalculateDamage() -->
+        <Button
+            Content="Calcular com Golden Vow"
+            Command="{Binding CalculateDamageCommand}"
+            HorizontalAlignment="Center"/>
+
+        <!-- Resultado -->
+        <TextBlock
+            Text="Dano final:"
+            FontWeight="Bold"/>
+
+        <TextBlock
+            Text="{Binding FinalDamage}"
+            FontSize="22"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"/>
+
+    </StackPanel>
+
+</Window>
