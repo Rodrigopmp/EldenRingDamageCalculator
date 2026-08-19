@@ -1,0 +1,74 @@
+[
+  {
+    "weaponName": "Greatsword",
+    "region": "Caelid",
+    "location": "Noroeste de Caelem Ruins",
+    "acquisitionType": "Baú em carruagem",
+    "description": "Encontrada no baú na parte traseira de uma carruagem, próxima a Caelem Ruins.",
+    "sourceName": "Fextralife",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Greatsword"
+  },
+  {
+    "weaponName": "Giant-Crusher",
+    "region": "Altus Plateau",
+    "location": "Sul de Outer Wall Phantom Tree",
+    "acquisitionType": "Baú em carruagem",
+    "description": "Encontrada no baú na parte traseira de uma carruagem ao sul do Site of Grace Outer Wall Phantom Tree.",
+    "sourceName": "Fextralife",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Giant-Crusher"
+  },
+  {
+    "weaponName": "Uchigatana",
+    "region": "Limgrave",
+    "location": "Deathtouched Catacombs",
+    "acquisitionType": "Equipamento inicial / Item no mundo",
+    "description": "É equipamento inicial da classe Samurai. Também pode ser encontrada dentro de Deathtouched Catacombs.",
+    "sourceName": "Fextralife",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Uchigatana"
+  },
+  {
+    "weaponName": "Bloodhound's Fang",
+    "region": "Limgrave",
+    "location": "Forlorn Hound Evergaol",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Bloodhound Knight Darriwil no Forlorn Hound Evergaol.",
+    "sourceName": "Fextralife",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Bloodhound%27s+Fang"
+  },
+  {
+    "weaponName": "Moonveil",
+    "region": "Caelid",
+    "location": "Gael Tunnel",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar o Magma Wyrm encontrado no final de Gael Tunnel.",
+    "sourceName": "Fextralife",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Moonveil"
+  },
+  {
+    "weaponName": "Rivers of Blood",
+    "region": "Mountaintops of the Giants",
+    "location": "Church of Repose",
+    "acquisitionType": "Drop de NPC invasor",
+    "description": "Obtida ao derrotar Bloody Finger Okina, que invade próximo à Church of Repose.",
+    "sourceName": "Fextralife",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Rivers+of+Blood"
+  },
+  {
+    "weaponName": "Rakshasa's Great Katana",
+    "region": "Scadu Altus",
+    "location": "Eastern Nameless Mausoleum",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Rakshasa dentro do Eastern Nameless Mausoleum.",
+    "sourceName": "Fextralife",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Rakshasa%27s+Great+Katana"
+  },
+  {
+    "weaponName": "Milady",
+    "region": "Realm of Shadow",
+    "location": "Castle Ensis",
+    "acquisitionType": "Baú",
+    "description": "Encontrada dentro de um baú no topo de uma torre em Castle Ensis.",
+    "sourceName": "Fextralife",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Milady"
+  }
+]

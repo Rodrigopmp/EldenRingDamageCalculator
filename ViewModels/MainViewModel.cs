@@ -13,7 +13,8 @@ namespace EldenRingDamageCalculator.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    private readonly DamageCalculator _damageCalculator = new();
+    private readonly DamageCalculator
+        _damageCalculator = new();
 
     private readonly BuffStackingService
         _buffStackingService = new();
@@ -21,52 +22,59 @@ public partial class MainViewModel : ViewModelBase
     private readonly WeaponCatalogService
         _weaponCatalogService = new();
 
+    private readonly WeaponAcquisitionService
+        _weaponAcquisitionService = new();
+
+    private readonly WeaponAttackCalculatorService
+        _weaponAttackCalculator = new();
+
 
     // =========================
     // ATRIBUTOS
     // =========================
 
-    public PlayerStats Stats { get; } = new();
+    public PlayerStats Stats { get; } =
+        new();
 
 
     // =========================
     // ARMAS
     // =========================
 
-    public ObservableCollection<Weapon> Weapons
-        { get; } = new();
+    public ObservableCollection<Weapon>
+        Weapons { get; } = new();
+
 
     [ObservableProperty]
     public partial Weapon? SelectedWeapon
         { get; set; }
 
+
     [ObservableProperty]
     public partial decimal WeaponUpgradeLevel
         { get; set; }
+
 
     [ObservableProperty]
     public partial decimal WeaponUpgradeMaximum
         { get; set; } = 25m;
 
+
     [ObservableProperty]
     public partial bool CanSelectAffinity
-        { get; set; } = true;
+        { get; set; }
+
 
     [ObservableProperty]
     public partial string WeaponCatalogStatus
-        { get; set; } = "Carregando armas...";
+        { get; set; } =
+        "Carregando armas...";
 
-
-    // =========================
-    // CINZAS DE GUERRA
-    // =========================
-
-    public ObservableCollection<AshOfWar> AshesOfWar
-        { get; } = new();
 
     [ObservableProperty]
-    public partial AshOfWar? SelectedAshOfWar
-        { get; set; }
+    public partial string AcquisitionCatalogStatus
+        { get; set; } =
+        "Carregando dados de obtenção...";
 
 
     // =========================
@@ -74,37 +82,161 @@ public partial class MainViewModel : ViewModelBase
     // =========================
 
     public ObservableCollection<WeaponAffinity>
-        Affinities { get; }
-        = new(
-            Enum.GetValues<WeaponAffinity>());
+        AvailableAffinities { get; } = new();
+
 
     [ObservableProperty]
     public partial WeaponAffinity SelectedAffinity
+        { get; set; } =
+        WeaponAffinity.Standard;
+
+
+    // =========================
+    // AR
+    // =========================
+
+    [ObservableProperty]
+    public partial int PhysicalBase
         { get; set; }
-        = WeaponAffinity.Standard;
+
+    [ObservableProperty]
+    public partial int PhysicalScaling
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int PhysicalAr
+        { get; set; }
+
+
+    [ObservableProperty]
+    public partial int MagicBase
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int MagicScaling
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int MagicAr
+        { get; set; }
+
+
+    [ObservableProperty]
+    public partial int FireBase
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int FireScaling
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int FireAr
+        { get; set; }
+
+
+    [ObservableProperty]
+    public partial int LightningBase
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int LightningScaling
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int LightningAr
+        { get; set; }
+
+
+    [ObservableProperty]
+    public partial int HolyBase
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int HolyScaling
+        { get; set; }
+
+    [ObservableProperty]
+    public partial int HolyAr
+        { get; set; }
+
+
+    [ObservableProperty]
+    public partial int WeaponTotalAr
+        { get; set; }
+
+
+    [ObservableProperty]
+    public partial string StrengthScalingDisplay
+        { get; set; } = "-";
+
+    [ObservableProperty]
+    public partial string DexterityScalingDisplay
+        { get; set; } = "-";
+
+    [ObservableProperty]
+    public partial string IntelligenceScalingDisplay
+        { get; set; } = "-";
+
+    [ObservableProperty]
+    public partial string FaithScalingDisplay
+        { get; set; } = "-";
+
+    [ObservableProperty]
+    public partial string ArcaneScalingDisplay
+        { get; set; } = "-";
+
+
+    [ObservableProperty]
+    public partial string WeaponRequirementWarning
+        { get; set; } = "";
+
+
+    [ObservableProperty]
+    public partial string WeaponArStatus
+        { get; set; } =
+        "Dados: regulation v1.14";
+
+
+    // =========================
+    // ASHES
+    // =========================
+
+    public ObservableCollection<AshOfWar>
+        AshesOfWar { get; } = new();
+
+
+    [ObservableProperty]
+    public partial AshOfWar?
+        SelectedAshOfWar
+        { get; set; }
 
 
     // =========================
     // TALISMÃS
     // =========================
 
-    public ObservableCollection<Talisman> Talismans
-        { get; } = new();
+    public ObservableCollection<Talisman>
+        Talismans { get; } = new();
+
 
     [ObservableProperty]
-    public partial Talisman? SelectedTalisman1
+    public partial Talisman?
+        SelectedTalisman1
         { get; set; }
 
     [ObservableProperty]
-    public partial Talisman? SelectedTalisman2
+    public partial Talisman?
+        SelectedTalisman2
         { get; set; }
 
     [ObservableProperty]
-    public partial Talisman? SelectedTalisman3
+    public partial Talisman?
+        SelectedTalisman3
         { get; set; }
 
     [ObservableProperty]
-    public partial Talisman? SelectedTalisman4
+    public partial Talisman?
+        SelectedTalisman4
         { get; set; }
 
 
@@ -112,43 +244,48 @@ public partial class MainViewModel : ViewModelBase
     // BUFFS
     // =========================
 
-    public ObservableCollection<Buff> AuraBuffs
-        { get; } = new();
+    public ObservableCollection<Buff>
+        AuraBuffs { get; } = new();
 
-    public ObservableCollection<Buff> BodyBuffs
-        { get; } = new();
+    public ObservableCollection<Buff>
+        BodyBuffs { get; } = new();
 
 
     // =========================
     // ARMADURA
     // =========================
 
-    public ObservableCollection<ArmorPiece> HeadArmor
-        { get; } = new();
+    public ObservableCollection<ArmorPiece>
+        HeadArmor { get; } = new();
 
-    public ObservableCollection<ArmorPiece> ChestArmor
-        { get; } = new();
+    public ObservableCollection<ArmorPiece>
+        ChestArmor { get; } = new();
 
-    public ObservableCollection<ArmorPiece> ArmArmor
-        { get; } = new();
+    public ObservableCollection<ArmorPiece>
+        ArmArmor { get; } = new();
 
-    public ObservableCollection<ArmorPiece> LegArmor
-        { get; } = new();
+    public ObservableCollection<ArmorPiece>
+        LegArmor { get; } = new();
+
 
     [ObservableProperty]
-    public partial ArmorPiece? SelectedHeadArmor
+    public partial ArmorPiece?
+        SelectedHeadArmor
         { get; set; }
 
     [ObservableProperty]
-    public partial ArmorPiece? SelectedChestArmor
+    public partial ArmorPiece?
+        SelectedChestArmor
         { get; set; }
 
     [ObservableProperty]
-    public partial ArmorPiece? SelectedArmArmor
+    public partial ArmorPiece?
+        SelectedArmArmor
         { get; set; }
 
     [ObservableProperty]
-    public partial ArmorPiece? SelectedLegArmor
+    public partial ArmorPiece?
+        SelectedLegArmor
         { get; set; }
 
 
@@ -156,18 +293,21 @@ public partial class MainViewModel : ViewModelBase
     // BOSSES
     // =========================
 
-    public ObservableCollection<Boss> Bosses
-        { get; } = new();
+    public ObservableCollection<Boss>
+        Bosses { get; } = new();
 
-    public ObservableCollection<BossPhase> BossPhases
-        { get; } = new();
+    public ObservableCollection<BossPhase>
+        BossPhases { get; } = new();
+
 
     [ObservableProperty]
-    public partial Boss? SelectedBoss
+    public partial Boss?
+        SelectedBoss
         { get; set; }
 
     [ObservableProperty]
-    public partial BossPhase? SelectedBossPhase
+    public partial BossPhase?
+        SelectedBossPhase
         { get; set; }
 
 
@@ -179,9 +319,11 @@ public partial class MainViewModel : ViewModelBase
     public partial decimal BaseDamage
         { get; set; } = 200m;
 
+
     [ObservableProperty]
     public partial decimal FinalDamage
         { get; set; } = 200m;
+
 
     [ObservableProperty]
     public partial string ValidationMessage
@@ -194,6 +336,10 @@ public partial class MainViewModel : ViewModelBase
 
     public MainViewModel()
     {
+        Stats.PropertyChanged +=
+            (_, _) =>
+                RecalculateWeaponAr();
+
         LoadTemporaryData();
 
         _ = LoadWeaponCatalogAsync();
@@ -201,7 +347,7 @@ public partial class MainViewModel : ViewModelBase
 
 
     // =========================
-    // CARREGAR ARMAS
+    // CARREGAR CATÁLOGO
     // =========================
 
     private async Task LoadWeaponCatalogAsync()
@@ -211,28 +357,49 @@ public partial class MainViewModel : ViewModelBase
             WeaponCatalogStatus =
                 "Carregando catálogo de armas...";
 
+            AcquisitionCatalogStatus =
+                "Carregando dados de obtenção...";
+
+
             var loadedWeapons =
                 await _weaponCatalogService
                     .LoadWeaponsAsync();
+
+
+            int acquisitionCount =
+                await _weaponAcquisitionService
+                    .ApplyAsync(
+                        loadedWeapons);
+
+
+            AcquisitionCatalogStatus =
+                $"{acquisitionCount} armas com dados de obtenção cadastrados.";
+
 
             await Dispatcher.UIThread.InvokeAsync(
                 () =>
                 {
                     Weapons.Clear();
 
-                    foreach (Weapon weapon
-                             in loadedWeapons)
+
+                    foreach (
+                        Weapon weapon
+                        in loadedWeapons)
                     {
-                        Weapons.Add(weapon);
+                        Weapons.Add(
+                            weapon);
                     }
+
 
                     SelectedWeapon =
                         Weapons.FirstOrDefault(
                             weapon =>
                                 weapon.Name
-                                == "Greatsword")
+                                ==
+                                "Greatsword")
                         ??
                         Weapons.FirstOrDefault();
+
 
                     WeaponCatalogStatus =
                         $"{Weapons.Count} armas carregadas.";
@@ -243,57 +410,15 @@ public partial class MainViewModel : ViewModelBase
             await Dispatcher.UIThread.InvokeAsync(
                 () =>
                 {
-                    LoadFallbackWeapons();
-
                     WeaponCatalogStatus =
-                        "Não foi possível acessar o catálogo online. "
-                        + "Usando armas temporárias. "
-                        + exception.Message;
+                        "Erro ao carregar catálogo: "
+                        +
+                        exception.Message;
+
+                    AcquisitionCatalogStatus =
+                        "Dados de obtenção indisponíveis.";
                 });
         }
-    }
-
-
-    // =========================
-    // FALLBACK
-    // =========================
-
-    private void LoadFallbackWeapons()
-    {
-        Weapons.Clear();
-
-        Weapons.Add(new Weapon
-        {
-            Name = "Greatsword",
-            Category = "Colossal Sword",
-            UpgradeType =
-                WeaponUpgradeType.SmithingStone,
-            MaxUpgradeLevel = 25,
-            AllowsCustomAffinity = true
-        });
-
-        Weapons.Add(new Weapon
-        {
-            Name = "Uchigatana",
-            Category = "Katana",
-            UpgradeType =
-                WeaponUpgradeType.SmithingStone,
-            MaxUpgradeLevel = 25,
-            AllowsCustomAffinity = true
-        });
-
-        Weapons.Add(new Weapon
-        {
-            Name = "Bloodhound's Fang",
-            Category = "Curved Greatsword",
-            UpgradeType =
-                WeaponUpgradeType.SomberSmithingStone,
-            MaxUpgradeLevel = 10,
-            AllowsCustomAffinity = false
-        });
-
-        SelectedWeapon =
-            Weapons.FirstOrDefault();
     }
 
 
@@ -304,29 +429,294 @@ public partial class MainViewModel : ViewModelBase
     partial void OnSelectedWeaponChanged(
         Weapon? value)
     {
+        AvailableAffinities.Clear();
+
+
         if (value is null)
         {
+            ResetWeaponAr();
+
             return;
         }
+
 
         WeaponUpgradeMaximum =
             value.MaxUpgradeLevel;
 
-        CanSelectAffinity =
-            value.AllowsCustomAffinity;
 
-        if (!CanSelectAffinity)
+        foreach (
+            WeaponAffinity affinity
+            in value.AvailableAffinities)
+        {
+            AvailableAffinities.Add(
+                affinity);
+        }
+
+
+        if (AvailableAffinities.Count == 0)
+        {
+            AvailableAffinities.Add(
+                WeaponAffinity.Standard);
+        }
+
+
+        CanSelectAffinity =
+            value.AllowsCustomAffinity
+            &&
+            AvailableAffinities.Count > 1;
+
+
+        if (AvailableAffinities.Contains(
+                WeaponAffinity.Standard))
         {
             SelectedAffinity =
                 WeaponAffinity.Standard;
         }
+        else
+        {
+            SelectedAffinity =
+                AvailableAffinities[0];
+        }
+
 
         if (WeaponUpgradeLevel
-            > WeaponUpgradeMaximum)
+            >
+            WeaponUpgradeMaximum)
         {
             WeaponUpgradeLevel =
                 WeaponUpgradeMaximum;
         }
+
+
+        RecalculateWeaponAr();
+    }
+
+
+    partial void OnSelectedAffinityChanged(
+        WeaponAffinity value)
+    {
+        RecalculateWeaponAr();
+    }
+
+
+    partial void OnWeaponUpgradeLevelChanged(
+        decimal value)
+    {
+        RecalculateWeaponAr();
+    }
+
+
+    // =========================
+    // RECALCULAR AR
+    // =========================
+
+    private void RecalculateWeaponAr()
+    {
+        if (SelectedWeapon is null)
+        {
+            ResetWeaponAr();
+
+            return;
+        }
+
+
+        int upgradeLevel =
+            (int)decimal.Truncate(
+                WeaponUpgradeLevel);
+
+
+        WeaponAttackResult result =
+            _weaponAttackCalculator
+                .Calculate(
+                    SelectedWeapon,
+                    SelectedAffinity,
+                    upgradeLevel,
+                    Stats);
+
+
+        PhysicalBase =
+            GetDisplayedValue(
+                result.BaseAttack,
+                DamageType.Physical);
+
+        PhysicalScaling =
+            GetDisplayedValue(
+                result.ScalingBonus,
+                DamageType.Physical);
+
+        PhysicalAr =
+            GetDisplayedValue(
+                result.TotalAttack,
+                DamageType.Physical);
+
+
+        MagicBase =
+            GetDisplayedValue(
+                result.BaseAttack,
+                DamageType.Magic);
+
+        MagicScaling =
+            GetDisplayedValue(
+                result.ScalingBonus,
+                DamageType.Magic);
+
+        MagicAr =
+            GetDisplayedValue(
+                result.TotalAttack,
+                DamageType.Magic);
+
+
+        FireBase =
+            GetDisplayedValue(
+                result.BaseAttack,
+                DamageType.Fire);
+
+        FireScaling =
+            GetDisplayedValue(
+                result.ScalingBonus,
+                DamageType.Fire);
+
+        FireAr =
+            GetDisplayedValue(
+                result.TotalAttack,
+                DamageType.Fire);
+
+
+        LightningBase =
+            GetDisplayedValue(
+                result.BaseAttack,
+                DamageType.Lightning);
+
+        LightningScaling =
+            GetDisplayedValue(
+                result.ScalingBonus,
+                DamageType.Lightning);
+
+        LightningAr =
+            GetDisplayedValue(
+                result.TotalAttack,
+                DamageType.Lightning);
+
+
+        HolyBase =
+            GetDisplayedValue(
+                result.BaseAttack,
+                DamageType.Holy);
+
+        HolyScaling =
+            GetDisplayedValue(
+                result.ScalingBonus,
+                DamageType.Holy);
+
+        HolyAr =
+            GetDisplayedValue(
+                result.TotalAttack,
+                DamageType.Holy);
+
+
+        WeaponTotalAr =
+            PhysicalAr
+            +
+            MagicAr
+            +
+            FireAr
+            +
+            LightningAr
+            +
+            HolyAr;
+
+
+        StrengthScalingDisplay =
+            FormatScaling(
+                result.StrengthScaling);
+
+        DexterityScalingDisplay =
+            FormatScaling(
+                result.DexterityScaling);
+
+        IntelligenceScalingDisplay =
+            FormatScaling(
+                result.IntelligenceScaling);
+
+        FaithScalingDisplay =
+            FormatScaling(
+                result.FaithScaling);
+
+        ArcaneScalingDisplay =
+            FormatScaling(
+                result.ArcaneScaling);
+
+
+        WeaponRequirementWarning =
+            result.RequirementsMet
+                ? ""
+                : "⚠ Os requisitos da arma não estão sendo atendidos. O AR está sofrendo penalidade.";
+    }
+
+
+    private static int GetDisplayedValue(
+        System.Collections.Generic.Dictionary<DamageType, double>
+            values,
+        DamageType damageType)
+    {
+        if (!values.TryGetValue(
+                damageType,
+                out double value))
+        {
+            return 0;
+        }
+
+
+        return (int)Math.Floor(
+            value);
+    }
+
+
+    private static string FormatScaling(
+        double scaling)
+    {
+        if (scaling <= 0)
+        {
+            return "-";
+        }
+
+
+        return scaling.ToString(
+            "0.000");
+    }
+
+
+    private void ResetWeaponAr()
+    {
+        PhysicalBase = 0;
+        PhysicalScaling = 0;
+        PhysicalAr = 0;
+
+        MagicBase = 0;
+        MagicScaling = 0;
+        MagicAr = 0;
+
+        FireBase = 0;
+        FireScaling = 0;
+        FireAr = 0;
+
+        LightningBase = 0;
+        LightningScaling = 0;
+        LightningAr = 0;
+
+        HolyBase = 0;
+        HolyScaling = 0;
+        HolyAr = 0;
+
+        WeaponTotalAr = 0;
+
+        StrengthScalingDisplay = "-";
+        DexterityScalingDisplay = "-";
+        IntelligenceScalingDisplay = "-";
+        FaithScalingDisplay = "-";
+        ArcaneScalingDisplay = "-";
+
+        WeaponRequirementWarning = "";
     }
 
 
@@ -336,146 +726,192 @@ public partial class MainViewModel : ViewModelBase
 
     private void LoadTemporaryData()
     {
-        // =====================
-        // CINZAS DE GUERRA
-        // =====================
+        AshesOfWar.Add(
+            new AshOfWar
+            {
+                Name =
+                    "Lion's Claw",
 
-        AshesOfWar.Add(new AshOfWar
-        {
-            Name = "Lion's Claw",
-            NativeAffinity =
-                WeaponAffinity.Heavy
-        });
-
-        AshesOfWar.Add(new AshOfWar
-        {
-            Name = "Unsheathe",
-            NativeAffinity =
-                WeaponAffinity.Keen
-        });
+                NativeAffinity =
+                    WeaponAffinity.Heavy
+            });
 
 
-        // =====================
-        // TALISMÃS
-        // =====================
+        AshesOfWar.Add(
+            new AshOfWar
+            {
+                Name =
+                    "Unsheathe",
 
-        var noTalisman = new Talisman
-        {
-            Name = "Nenhum",
-            IsNone = true
-        };
-
-        Talismans.Add(noTalisman);
-
-        Talismans.Add(new Talisman
-        {
-            Name = "Axe Talisman",
-            EffectDescription =
-                "Aumenta ataques carregados."
-        });
-
-        Talismans.Add(new Talisman
-        {
-            Name = "Shard of Alexander",
-            EffectDescription =
-                "Aumenta o dano de skills."
-        });
+                NativeAffinity =
+                    WeaponAffinity.Keen
+            });
 
 
-        // =====================
-        // AURA BUFFS
-        // =====================
+        var noTalisman =
+            new Talisman
+            {
+                Name =
+                    "Nenhum",
 
-        AuraBuffs.Add(new Buff
-        {
-            Name = "Golden Vow",
-            DamageBonusPercent = 15m,
-            Category = BuffCategory.Aura,
-            StackGroup = "Aura Buff",
-            EffectDescription =
-                "Aumenta o dano geral."
-        });
-
-        AuraBuffs.Add(new Buff
-        {
-            Name = "Rallying Standard",
-            DamageBonusPercent = 20m,
-            Category = BuffCategory.Aura,
-            StackGroup = "Aura Buff",
-            EffectDescription =
-                "Não stacka com Golden Vow."
-        });
+                IsNone =
+                    true
+            };
 
 
-        // =====================
-        // BODY BUFFS
-        // =====================
-
-        BodyBuffs.Add(new Buff
-        {
-            Name =
-                "Flame, Grant Me Strength",
-            DamageBonusPercent = 20m,
-            Category = BuffCategory.Body,
-            StackGroup = "Body Buff",
-            EffectDescription =
-                "Aumenta dano Physical e Fire."
-        });
-
-        BodyBuffs.Add(new Buff
-        {
-            Name = "Howl of Shabriri",
-            DamageBonusPercent = 25m,
-            Category = BuffCategory.Body,
-            StackGroup = "Body Buff",
-            EffectDescription =
-                "Aumenta dano, mas também dano recebido."
-        });
+        Talismans.Add(
+            noTalisman);
 
 
-        // =====================
-        // ARMADURA
-        // =====================
+        Talismans.Add(
+            new Talisman
+            {
+                Name =
+                    "Axe Talisman",
+
+                EffectDescription =
+                    "Aumenta ataques carregados."
+            });
+
+
+        Talismans.Add(
+            new Talisman
+            {
+                Name =
+                    "Shard of Alexander",
+
+                EffectDescription =
+                    "Aumenta o dano de skills."
+            });
+
+
+        AuraBuffs.Add(
+            new Buff
+            {
+                Name =
+                    "Golden Vow",
+
+                DamageBonusPercent =
+                    15m,
+
+                Category =
+                    BuffCategory.Aura,
+
+                StackGroup =
+                    "Aura Buff",
+
+                EffectDescription =
+                    "Aumenta o dano geral."
+            });
+
+
+        AuraBuffs.Add(
+            new Buff
+            {
+                Name =
+                    "Rallying Standard",
+
+                DamageBonusPercent =
+                    20m,
+
+                Category =
+                    BuffCategory.Aura,
+
+                StackGroup =
+                    "Aura Buff",
+
+                EffectDescription =
+                    "Não stacka com Golden Vow."
+            });
+
+
+        BodyBuffs.Add(
+            new Buff
+            {
+                Name =
+                    "Flame, Grant Me Strength",
+
+                DamageBonusPercent =
+                    20m,
+
+                Category =
+                    BuffCategory.Body,
+
+                StackGroup =
+                    "Body Buff",
+
+                EffectDescription =
+                    "Aumenta dano Physical e Fire."
+            });
+
+
+        BodyBuffs.Add(
+            new Buff
+            {
+                Name =
+                    "Howl of Shabriri",
+
+                DamageBonusPercent =
+                    25m,
+
+                Category =
+                    BuffCategory.Body,
+
+                StackGroup =
+                    "Body Buff",
+
+                EffectDescription =
+                    "Aumenta dano, mas também dano recebido."
+            });
+
 
         AddEmptyArmorSlots();
 
 
-        // =====================
-        // BOSSES
-        // =====================
+        var malenia =
+            new Boss
+            {
+                Name =
+                    "Malenia, Blade of Miquella"
+            };
 
-        var malenia = new Boss
-        {
-            Name =
-                "Malenia, Blade of Miquella"
-        };
 
         malenia.Phases.Add(
             new BossPhase
             {
-                Name = "Phase 1"
+                Name =
+                    "Phase 1"
             });
+
 
         malenia.Phases.Add(
             new BossPhase
             {
-                Name = "Phase 2"
+                Name =
+                    "Phase 2"
             });
 
-        Bosses.Add(malenia);
 
+        Bosses.Add(
+            malenia);
 
-        // =====================
-        // SELEÇÕES INICIAIS
-        // =====================
 
         SelectedAshOfWar =
             AshesOfWar.FirstOrDefault();
 
-        SelectedTalisman1 = noTalisman;
-        SelectedTalisman2 = noTalisman;
-        SelectedTalisman3 = noTalisman;
-        SelectedTalisman4 = noTalisman;
+
+        SelectedTalisman1 =
+            noTalisman;
+
+        SelectedTalisman2 =
+            noTalisman;
+
+        SelectedTalisman3 =
+            noTalisman;
+
+        SelectedTalisman4 =
+            noTalisman;
+
 
         SelectedHeadArmor =
             HeadArmor.FirstOrDefault();
@@ -489,76 +925,79 @@ public partial class MainViewModel : ViewModelBase
         SelectedLegArmor =
             LegArmor.FirstOrDefault();
 
+
         SelectedBoss =
             Bosses.FirstOrDefault();
     }
 
 
-    // =========================
-    // ARMADURAS VAZIAS
-    // =========================
-
     private void AddEmptyArmorSlots()
     {
-        HeadArmor.Add(new ArmorPiece
-        {
-            Name = "Nenhum",
-            Slot = ArmorSlot.Head,
-            IsNone = true
-        });
+        HeadArmor.Add(
+            new ArmorPiece
+            {
+                Name = "Nenhum",
+                Slot = ArmorSlot.Head,
+                IsNone = true
+            });
 
-        ChestArmor.Add(new ArmorPiece
-        {
-            Name = "Nenhum",
-            Slot = ArmorSlot.Chest,
-            IsNone = true
-        });
 
-        ArmArmor.Add(new ArmorPiece
-        {
-            Name = "Nenhum",
-            Slot = ArmorSlot.Arms,
-            IsNone = true
-        });
+        ChestArmor.Add(
+            new ArmorPiece
+            {
+                Name = "Nenhum",
+                Slot = ArmorSlot.Chest,
+                IsNone = true
+            });
 
-        LegArmor.Add(new ArmorPiece
-        {
-            Name = "Nenhum",
-            Slot = ArmorSlot.Legs,
-            IsNone = true
-        });
+
+        ArmArmor.Add(
+            new ArmorPiece
+            {
+                Name = "Nenhum",
+                Slot = ArmorSlot.Arms,
+                IsNone = true
+            });
+
+
+        LegArmor.Add(
+            new ArmorPiece
+            {
+                Name = "Nenhum",
+                Slot = ArmorSlot.Legs,
+                IsNone = true
+            });
     }
 
-
-    // =========================
-    // TROCA DE BOSS
-    // =========================
 
     partial void OnSelectedBossChanged(
         Boss? value)
     {
         BossPhases.Clear();
 
+
         if (value is null)
         {
-            SelectedBossPhase = null;
+            SelectedBossPhase =
+                null;
+
             return;
         }
 
-        foreach (BossPhase phase
-                 in value.Phases)
+
+        foreach (
+            BossPhase phase
+            in value.Phases)
         {
-            BossPhases.Add(phase);
+            BossPhases.Add(
+                phase);
         }
+
 
         SelectedBossPhase =
             BossPhases.FirstOrDefault();
     }
 
-
-    // =========================
-    // CÁLCULO
-    // =========================
 
     [RelayCommand]
     private void CalculateDamage()
@@ -571,18 +1010,22 @@ public partial class MainViewModel : ViewModelBase
                         buff.IsSelected)
                 .ToList();
 
+
         ValidationMessage =
             _buffStackingService
                 .FindConflicts(
                     selectedBuffs);
 
+
         if (!string.IsNullOrWhiteSpace(
                 ValidationMessage))
         {
-            FinalDamage = BaseDamage;
+            FinalDamage =
+                BaseDamage;
 
             return;
         }
+
 
         FinalDamage =
             _damageCalculator
