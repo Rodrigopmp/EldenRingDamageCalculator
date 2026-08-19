@@ -49,3 +49,10 @@ public enum PhysicalDamageType
     Strike,
     Pierce
 }
+
+public enum WeaponUpgradeType
+{
+    None,
+    SmithingStone,
+    SomberSmithingStone
+}
