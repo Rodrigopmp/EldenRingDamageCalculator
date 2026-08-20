@@ -1,0 +1,902 @@
+[
+  {
+    "weaponName": "Death Knight's Twin Axes",
+    "region": "Gravesite Plain",
+    "location": "Fog Rift Catacombs",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar o Death Knight no final de Fog Rift Catacombs.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Forked-Tongue Hatchet",
+    "region": "Scadu Altus",
+    "location": "Darklight Catacombs",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Imps que empunham a arma; há um bom ponto de farm em Darklight Catacombs.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Messmer Soldier's Axe",
+    "region": "Realm of Shadow",
+    "location": "Acampamentos de Messmer / Shadow Keep",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Messmer Soldiers que empunham machados.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Smithscript Axe",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Taylew's Ruined Forge",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada dentro de Taylew's Ruined Forge, guardada por um golem de pedra.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Backhand Blade",
+    "region": "Gravesite Plain",
+    "location": "Nordeste de Scorched Ruins",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um monumento de pedra próximo à estrada, a nordeste de Scorched Ruins.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Curseblade's Cirque",
+    "region": "Gravesite Plain",
+    "location": "Belurat, Tower Settlement",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Curseblades; um inimigo pode ser farmado próximo ao Stagefront Site of Grace.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Smithscript Cirque",
+    "region": "Scadu Altus",
+    "location": "Ruined Forge of Starfall Past",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo na sala final de Ruined Forge of Starfall Past.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Rabbath's Cannon",
+    "region": "Scadu Altus",
+    "location": "Rabbath's Rise",
+    "acquisitionType": "Baú",
+    "description": "Obtida em um baú no topo de Rabbath's Rise.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Beast Claw",
+    "region": "Gravesite Plain",
+    "location": "Bosque a leste do primeiro Site of Grace",
+    "acquisitionType": "Drop de NPC",
+    "description": "Obtida ao derrotar Logur, the Beast Claw.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Red Bear's Claw",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Northern Nameless Mausoleum",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Red Bear no Northern Nameless Mausoleum.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Ansbach's Longbow",
+    "region": "Scadu Altus",
+    "location": "Shadow Keep — quest de Leda/Ansbach",
+    "acquisitionType": "Quest / NPC",
+    "description": "Obtida durante a quest de Sir Ansbach e Needle Knight Leda ao seguir a rota que recompensa o arco.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Claws of Night",
+    "region": "Scadu Altus",
+    "location": "Cathedral of Manus Metyr / Finger Ruins of Miyr",
+    "acquisitionType": "Drop de NPC",
+    "description": "Obtida ao derrotar Swordhand of Night Anna durante a quest de Count Ymir.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Ancient Meteoric Ore Greatsword",
+    "region": "Scadu Altus",
+    "location": "Ruined Forge of Starfall Past",
+    "acquisitionType": "Recompensa de dungeon",
+    "description": "Obtida ao interagir com o altar no fim de Ruined Forge of Starfall Past.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Fire Knight's Greatsword",
+    "region": "Scadu Altus",
+    "location": "Shadow Keep",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Fire Knights que empunham a Fire Knight's Greatsword.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Greatsword of Radahn (Light)",
+    "region": "Enir-Ilim",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of a God and a Lord com Enia após derrotar Promised Consort Radahn.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Greatsword of Radahn (Lord)",
+    "region": "Enir-Ilim",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of a God and a Lord com Enia após derrotar Promised Consort Radahn.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Moonrithyll's Knight Sword",
+    "region": "Gravesite Plain",
+    "location": "Castle Ensis",
+    "acquisitionType": "Drop de NPC",
+    "description": "Obtida ao derrotar Moonrithyll, Carian Knight, em Castle Ensis.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Anvil Hammer",
+    "region": "Gravesite Plain",
+    "location": "Ruined Forge Lava Intake",
+    "acquisitionType": "Recompensa de dungeon",
+    "description": "Obtida no altar ao final de Ruined Forge Lava Intake.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Bloodfiend's Arm",
+    "region": "Gravesite Plain",
+    "location": "Prospect Town",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Bloodfiends; Prospect Town é um bom local de farm.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Devonia's Hammer",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Ancient Ruins of Rauh",
+    "acquisitionType": "Drop de NPC",
+    "description": "Obtida ao derrotar Crucible Knight Devonia.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Gazing Finger",
+    "region": "Scadu Altus",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of the Mother of Fingers com Enia após derrotar Metyr.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Shadow Sunflower Blossom",
+    "region": "Scadu Altus",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of the Shadow Sunflower com Enia após derrotar Scadutree Avatar.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Repeating Crossbow",
+    "region": "Scadu Altus",
+    "location": "Norte de Moorth Highway, South",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo no campo ao norte de Moorth Highway, South.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Spread Crossbow",
+    "region": "Gravesite Plain",
+    "location": "Acampamento a sudeste de Castle Ensis",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo dentro de um acampamento de Messmer Soldiers.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Freyja's Greatsword",
+    "region": "Enir-Ilim",
+    "location": "Após a luta contra Needle Knight Leda e aliados",
+    "acquisitionType": "Quest / NPC",
+    "description": "Pode ser saqueada do corpo de Redmane Freyja após a luta, caso ela participe conforme a quest.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Horned Warrior's Greatsword",
+    "region": "Enir-Ilim",
+    "location": "Enir-Ilim",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop de Horned Warrior que empunha a versão greatsword em Enir-Ilim.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Dancing Blade of Ranah",
+    "region": "Cerulean Coast",
+    "location": "Southern Nameless Mausoleum",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Dancer of Ranah no Southern Nameless Mausoleum.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Falx",
+    "region": "Enir-Ilim",
+    "location": "Quest de Hornsent / luta de Leda",
+    "acquisitionType": "Quest / NPC",
+    "description": "Obtida de Hornsent conforme a progressão da quest; pode ser saqueada após a luta de Leda se ele estiver presente.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Horned Warrior's Sword",
+    "region": "Gravesite Plain",
+    "location": "Belurat, Tower Settlement — área do pântano venenoso",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Obtida de um Horned Warrior na área inferior de Belurat.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Spirit Sword",
+    "region": "Cerulean Coast",
+    "location": "Cerulean Coast",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo na região da Cerulean Coast.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Fire Knight's Shortsword",
+    "region": "Scadu Altus",
+    "location": "Shadow Keep",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Fire Knights que empunham shortswords.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Main-gauche",
+    "region": "Scadu Altus",
+    "location": "Shadow Keep",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo numa sala após a luta contra o Golden Hippopotamus.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Golem Fist",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Taylew's Ruined Forge",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório dos golems que atacam arremessando os próprios punhos.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Madding Hand",
+    "region": "Abyssal Woods",
+    "location": "Próximo de Woodland Trail",
+    "acquisitionType": "Drop de NPC",
+    "description": "Obtida ao derrotar o inimigo NPC Madding Hand.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Pata",
+    "region": "Gravesite Plain",
+    "location": "Church of Benediction",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo próximo à Church of Benediction.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Poisoned Hand",
+    "region": "Gravesite Plain",
+    "location": "Belurat, Tower Settlement",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada na área inferior/venenosa de Belurat, Tower Settlement.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Thiollier's Hidden Needle",
+    "region": "Enir-Ilim",
+    "location": "Arena de Promised Consort Radahn",
+    "acquisitionType": "Quest / NPC",
+    "description": "Após concluir a quest de Thiollier e derrotar o chefe final, saqueie o corpo de Thiollier na arena.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Serpent Flail",
+    "region": "Scadu Altus",
+    "location": "Fog Rift Fort",
+    "acquisitionType": "Baú",
+    "description": "Encontrada em um baú na parte inferior de Fog Rift Fort.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Maternal Staff",
+    "region": "Scadu Altus",
+    "location": "Cathedral of Manus Metyr",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Count Ymir, Mother of Fingers, no final de sua quest.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Staff of the Great Beyond",
+    "region": "Scadu Altus",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of the Mother of Fingers com Enia após derrotar Metyr.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Black Steel Greathammer",
+    "region": "Gravesite Plain",
+    "location": "Church of Consolation",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Obtida do Black Knight na Church of Consolation.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Smithscript Greathammer",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Taylew's Ruined Forge",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo dentro de Taylew's Ruined Forge.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Dragon-Hunter's Great Katana",
+    "region": "Gravesite Plain",
+    "location": "Dragon's Pit",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Ancient Dragon-Man no final de Dragon's Pit.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Great Katana",
+    "region": "Gravesite Plain",
+    "location": "Lago ao norte de Gravesite Plain",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo próximo ao Ghostflame Dragon no grande lago.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Barbed Staff-Spear",
+    "region": "Scadu Altus",
+    "location": "Darklight Catacombs",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Jori, Elder Inquisitor, no final de Darklight Catacombs.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Bloodfiend's Sacred Spear",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Lago a oeste de Taylew's Ruined Forge",
+    "acquisitionType": "Drop de inimigo único",
+    "description": "Obtida ao derrotar o Bloodfiend único que empunha esta lança.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Messmer Soldier's Spear",
+    "region": "Realm of Shadow",
+    "location": "Acampamentos de Messmer / Shadow Keep",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Messmer Soldiers que empunham lança.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Spear of the Impaler",
+    "region": "Scadu Altus",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of the Impaler com Enia após derrotar Messmer the Impaler.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Bonny Butchering Knife",
+    "region": "Scadu Altus",
+    "location": "Bonny Village",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo abaixo de um pequeno abrigo próximo às casas de Bonny Village.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Death Knight's Longhaft Axe",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Scorpion River Catacombs",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar o Death Knight no final de Scorpion River Catacombs.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Putrescence Cleaver",
+    "region": "Cerulean Coast",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of Putrescence com Enia após derrotar Putrescent Knight.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Igon's Greatbow",
+    "region": "Jagged Peak",
+    "location": "Foot of the Jagged Peak",
+    "acquisitionType": "Quest / NPC",
+    "description": "Após derrotar Bayle the Dread, retorne a Igon e saqueie seu corpo.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Black Steel Greatshield",
+    "region": "Scadu Altus",
+    "location": "Fog Rift Fort",
+    "acquisitionType": "Drop de NPC",
+    "description": "Obtida ao derrotar Black Knight Garrew em Fog Rift Fort.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Verdigris Greatshield",
+    "region": "Scadu Altus",
+    "location": "Quest de Moore",
+    "acquisitionType": "Quest / NPC",
+    "description": "Obtida de Moore conforme sua quest; também pode ser adquirida ao derrotá-lo em rotas específicas.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Greatsword of Damnation",
+    "region": "Abyssal Woods",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of the Lord of Frenzied Flame com Enia após derrotar Midra.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Greatsword of Solitude",
+    "region": "Gravesite Plain",
+    "location": "Western Nameless Mausoleum",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Blackgaol Knight.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Lizard Greatsword",
+    "region": "Realm of Shadow",
+    "location": "Catacumbas, como Darklight Catacombs",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Imps que empunham a Lizard Greatsword.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Poleblade of the Bud",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of the Saint of the Bud com Enia após derrotar Romina.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Spirit Glaive",
+    "region": "Cerulean Coast",
+    "location": "Charo's Hidden Grave",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo na região de Charo's Hidden Grave.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Flowerstone Gavel",
+    "region": "Jagged Peak",
+    "location": "Grand Altar of Dragon Communion",
+    "acquisitionType": "Quest / NPC",
+    "description": "Após derrotar Bayle the Dread, retorne ao Grand Altar of Dragon Communion e pegue a arma deixada pela Dragon Communion Priestess.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Dane's Footwork",
+    "region": "Enir-Ilim",
+    "location": "Após a luta contra Needle Knight Leda e aliados",
+    "acquisitionType": "Quest / NPC",
+    "description": "Saqueie o corpo de Dryleaf Dane após a luta contra Leda e seus aliados.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Dryleaf Arts",
+    "region": "Scadu Altus",
+    "location": "Moorth Ruins",
+    "acquisitionType": "Quest / duelo",
+    "description": "Obtida ao desafiar e derrotar Dryleaf Dane após usar o gesto May the Best Win.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Queelign's Greatsword",
+    "region": "Scadu Altus",
+    "location": "Shadow Keep — Prayer Room",
+    "acquisitionType": "Quest / NPC",
+    "description": "Dê a Iris of Occultation a Fire Knight Queelign na Prayer Room para receber a arma.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Sword Lance",
+    "region": "Scadu Altus",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of the Wild Boar Rider com Enia após derrotar Commander Gaius.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Star-Lined Sword",
+    "region": "Cerulean Coast",
+    "location": "Costa oeste / Demi-Human Queen Marigga",
+    "acquisitionType": "Drop de boss",
+    "description": "Obtida ao derrotar Demi-Human Queen Marigga.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Sword of Night",
+    "region": "Scadu Altus",
+    "location": "Cathedral of Manus Metyr",
+    "acquisitionType": "Quest / NPC",
+    "description": "Após derrotar Count Ymir, dê a Iris of Occultation a Swordhand of Night Jolan.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Bone Bow",
+    "region": "Gravesite Plain",
+    "location": "Belurat, Tower Settlement",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo dentro de uma torre na parte superior de Belurat.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Leda's Sword",
+    "region": "Enir-Ilim",
+    "location": "Luta contra Needle Knight Leda e aliados",
+    "acquisitionType": "Drop de boss/NPC",
+    "description": "Recebida após derrotar Needle Knight Leda e seus aliados em Enir-Ilim.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Rellana's Twin Blades",
+    "region": "Gravesite Plain",
+    "location": "Roundtable Hold — Finger Reader Enia",
+    "acquisitionType": "Remembrance",
+    "description": "Troque a Remembrance of the Twin Moon Knight com Enia após derrotar Rellana.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Golden Lion Shield",
+    "region": "Scadu Altus",
+    "location": "Shadow Keep — quest de Freyja/Ansbach",
+    "acquisitionType": "Quest / NPC",
+    "description": "Recebida de Redmane Freyja após entregar a Letter for Freyja de Sir Ansbach.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Messmer Soldier Shield",
+    "region": "Realm of Shadow",
+    "location": "Acampamentos de Messmer / Shadow Keep",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Messmer Soldiers que usam este escudo.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Serpent Crest Shield",
+    "region": "Gravesite Plain",
+    "location": "Recompensa da Incursion Painting",
+    "acquisitionType": "Painting",
+    "description": "Resolva o puzzle da Incursion Painting e aproxime-se do espírito pintor para receber o escudo.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Wolf Crest Shield",
+    "region": "Gravesite Plain",
+    "location": "Castle Ensis",
+    "acquisitionType": "Baú / item oculto",
+    "description": "Encontrado em uma área escondida de Castle Ensis.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Chilling Perfume Bottle",
+    "region": "Cerulean Coast",
+    "location": "Lamenter's Gaol",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em uma cela/sala gelada dentro de Lamenter's Gaol.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Deadly Poison Perfume Bottle",
+    "region": "Gravesite Plain",
+    "location": "Pillar Path Cross",
+    "acquisitionType": "Loja",
+    "description": "Comprada de Thiollier por 6.000 runes.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Firespark Perfume Bottle",
+    "region": "Gravesite Plain",
+    "location": "Sul de Castle Front",
+    "acquisitionType": "Baú",
+    "description": "Encontrada em um baú guardado por Perfumers próximo a Castle Ensis.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Frenzyflame Perfume Bottle",
+    "region": "Abyssal Woods",
+    "location": "Abandoned Church",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo dentro da Abandoned Church.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Lightning Perfume Bottle",
+    "region": "Scadu Altus",
+    "location": "Sul de Ellac River Downstream",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um pequeno lago perto de animais carregados de eletricidade.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Obsidian Lamina",
+    "region": "Enir-Ilim",
+    "location": "Arena de Promised Consort Radahn",
+    "acquisitionType": "Quest / NPC",
+    "description": "Após concluir a quest de Sir Ansbach e derrotar o chefe final, saqueie seu corpo na arena.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Dryleaf Seal",
+    "region": "Scadu Altus",
+    "location": "Recluses' River Downstream",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada próxima a uma lápide abaixo do penhasco na região de Recluses' River.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Fire Knight's Seal",
+    "region": "Scadu Altus",
+    "location": "Shadow Keep — Church District",
+    "acquisitionType": "Item no mundo",
+    "description": "Após drenar o Church District, encontre-a atrás da estátua decapitada de Marika.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Spiraltree Seal",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Recompensa da The Sacred Tower Painting",
+    "acquisitionType": "Painting",
+    "description": "Resolva o puzzle da pintura The Sacred Tower para receber o selo.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Shield of Night",
+    "region": "Gravesite Plain",
+    "location": "Bonny Gaol",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrado em um corpo em uma saliência dentro de Bonny Gaol.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Smithscript Shield",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Taylew's Ruined Forge",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrado em um corpo dentro de Taylew's Ruined Forge.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Bloodfiend's Fork",
+    "region": "Ancient Ruins of Rauh",
+    "location": "Ruins of Rauh",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Bloodfiends que empunham a arma.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Smithscript Spear",
+    "region": "Scadu Altus",
+    "location": "Ruined Forge of Starfall Past",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo logo após a primeira ponte da forge.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Swift Spear",
+    "region": "Scadu Altus",
+    "location": "Próximo a Castle Ensis / Scadu Altus",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo guardado por Messmer Soldiers na estrada de Scadu Altus.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Stone-Sheathed Sword",
+    "region": "Scadu Altus",
+    "location": "Ruins of Unte / altares alternativos",
+    "acquisitionType": "Item especial",
+    "description": "Obtida no primeiro dos três altares especiais que o jogador visitar; os demais se tornam altares de Light e Darkness.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Sword of Darkness",
+    "region": "Realm of Shadow",
+    "location": "Altar of Darkness",
+    "acquisitionType": "Transformação",
+    "description": "Transforme a Stone-Sheathed Sword no Altar of Darkness.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Sword of Light",
+    "region": "Realm of Shadow",
+    "location": "Altar of Light",
+    "acquisitionType": "Transformação",
+    "description": "Transforme a Stone-Sheathed Sword no Altar of Light.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Velvet Sword of St. Trina",
+    "region": "Cerulean Coast",
+    "location": "Stone Coffin Fissure",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em uma pequena caverna acessível por um caminho lateral após Fissure Cross.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Smithscript Dagger",
+    "region": "Gravesite Plain",
+    "location": "Ruined Forge Lava Intake",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo no nível inferior da sala com o grande mecanismo de tubos.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Carian Thrusting Shield",
+    "region": "Scadu Altus",
+    "location": "Shadow Keep",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrado dentro de Shadow Keep, na região do Specimen Storehouse.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Dueling Shield",
+    "region": "Gravesite Plain",
+    "location": "Shadow Keep / Storehouse",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrado em Shadow Keep, em uma área do Storehouse acessível durante a exploração.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Carian Sorcery Sword",
+    "region": "Scadu Altus",
+    "location": "Castle Ensis — telhado inacessível pela rota normal",
+    "acquisitionType": "Baú",
+    "description": "Encontrada em um baú ao descer para o telhado de Castle Ensis a partir de Scadu Altus.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Lamenting Visage",
+    "region": "Cerulean Coast",
+    "location": "Lamenter's Gaol",
+    "acquisitionType": "Baú / item no mundo",
+    "description": "Encontrado atrás de uma passagem secreta em Lamenter's Gaol, usando a Lower Gaol Key.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Nanaya's Torch",
+    "region": "Abyssal Woods",
+    "location": "Midra's Manse",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo numa cadeira na biblioteca de Midra's Manse.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Black Steel Twinblade",
+    "region": "Scadu Altus",
+    "location": "Acampamento ao norte de Scadu Altus",
+    "acquisitionType": "Drop de inimigo",
+    "description": "Drop aleatório de Black Knights que empunham a twinblade.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Euporia",
+    "region": "Enir-Ilim",
+    "location": "Belurat/Enir-Ilim — rota secreta",
+    "acquisitionType": "Item lendário no mundo",
+    "description": "Encontrada no fim de uma longa rota secreta que conecta Enir-Ilim a uma área alta de Belurat.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  },
+  {
+    "weaponName": "Tooth Whip",
+    "region": "Scadu Altus",
+    "location": "Whipping Hut, leste de Bonny Village",
+    "acquisitionType": "Item no mundo",
+    "description": "Encontrada em um corpo dentro da Whipping Hut.",
+    "sourceName": "Fextralife / Polygon",
+    "sourceUrl": "https://eldenring.wiki.fextralife.com/Weapons"
+  }
+]

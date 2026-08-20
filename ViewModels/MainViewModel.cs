@@ -82,17 +82,19 @@ public partial class MainViewModel : ViewModelBase
     // =========================
 
     public ObservableCollection<WeaponAffinity>
-        AvailableAffinities { get; } = new();
+        AvailableAffinities
+        { get; } = new();
 
 
     [ObservableProperty]
-    public partial WeaponAffinity SelectedAffinity
+    public partial WeaponAffinity
+        SelectedAffinity
         { get; set; } =
         WeaponAffinity.Standard;
 
 
     // =========================
-    // AR
+    // ATTACK RATING
     // =========================
 
     [ObservableProperty]
@@ -198,7 +200,7 @@ public partial class MainViewModel : ViewModelBase
 
 
     // =========================
-    // ASHES
+    // CINZAS DE GUERRA
     // =========================
 
     public ObservableCollection<AshOfWar>
@@ -224,15 +226,18 @@ public partial class MainViewModel : ViewModelBase
         SelectedTalisman1
         { get; set; }
 
+
     [ObservableProperty]
     public partial Talisman?
         SelectedTalisman2
         { get; set; }
 
+
     [ObservableProperty]
     public partial Talisman?
         SelectedTalisman3
         { get; set; }
+
 
     [ObservableProperty]
     public partial Talisman?
@@ -273,15 +278,18 @@ public partial class MainViewModel : ViewModelBase
         SelectedHeadArmor
         { get; set; }
 
+
     [ObservableProperty]
     public partial ArmorPiece?
         SelectedChestArmor
         { get; set; }
 
+
     [ObservableProperty]
     public partial ArmorPiece?
         SelectedArmArmor
         { get; set; }
+
 
     [ObservableProperty]
     public partial ArmorPiece?
@@ -304,6 +312,7 @@ public partial class MainViewModel : ViewModelBase
     public partial Boss?
         SelectedBoss
         { get; set; }
+
 
     [ObservableProperty]
     public partial BossPhase?
@@ -342,12 +351,13 @@ public partial class MainViewModel : ViewModelBase
 
         LoadTemporaryData();
 
-        _ = LoadWeaponCatalogAsync();
+        _ =
+            LoadWeaponCatalogAsync();
     }
 
 
     // =========================
-    // CARREGAR CATÁLOGO
+    // CARREGAR ARMAS
     // =========================
 
     private async Task LoadWeaponCatalogAsync()
@@ -372,8 +382,10 @@ public partial class MainViewModel : ViewModelBase
                         loadedWeapons);
 
 
-            AcquisitionCatalogStatus =
-                $"{acquisitionCount} armas com dados de obtenção cadastrados.";
+            var missingWeapons =
+                await _weaponAcquisitionService
+                    .GenerateMissingReportAsync(
+                        loadedWeapons);
 
 
             await Dispatcher.UIThread.InvokeAsync(
@@ -403,6 +415,14 @@ public partial class MainViewModel : ViewModelBase
 
                     WeaponCatalogStatus =
                         $"{Weapons.Count} armas carregadas.";
+
+
+                    AcquisitionCatalogStatus =
+                        $"{acquisitionCount} armas com dados de obtenção. "
+                        +
+                        $"{missingWeapons.Count} faltando. "
+                        +
+                        "Relatório gerado em Data/missing-weapon-acquisitions.txt";
                 });
         }
         catch (Exception exception)
@@ -492,12 +512,20 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
+    // =========================
+    // TROCA DE AFINIDADE
+    // =========================
+
     partial void OnSelectedAffinityChanged(
         WeaponAffinity value)
     {
         RecalculateWeaponAr();
     }
 
+
+    // =========================
+    // TROCA DE UPGRADE
+    // =========================
 
     partial void OnWeaponUpgradeLevelChanged(
         decimal value)
@@ -539,10 +567,12 @@ public partial class MainViewModel : ViewModelBase
                 result.BaseAttack,
                 DamageType.Physical);
 
+
         PhysicalScaling =
             GetDisplayedValue(
                 result.ScalingBonus,
                 DamageType.Physical);
+
 
         PhysicalAr =
             GetDisplayedValue(
@@ -555,10 +585,12 @@ public partial class MainViewModel : ViewModelBase
                 result.BaseAttack,
                 DamageType.Magic);
 
+
         MagicScaling =
             GetDisplayedValue(
                 result.ScalingBonus,
                 DamageType.Magic);
+
 
         MagicAr =
             GetDisplayedValue(
@@ -571,10 +603,12 @@ public partial class MainViewModel : ViewModelBase
                 result.BaseAttack,
                 DamageType.Fire);
 
+
         FireScaling =
             GetDisplayedValue(
                 result.ScalingBonus,
                 DamageType.Fire);
+
 
         FireAr =
             GetDisplayedValue(
@@ -587,10 +621,12 @@ public partial class MainViewModel : ViewModelBase
                 result.BaseAttack,
                 DamageType.Lightning);
 
+
         LightningScaling =
             GetDisplayedValue(
                 result.ScalingBonus,
                 DamageType.Lightning);
+
 
         LightningAr =
             GetDisplayedValue(
@@ -603,10 +639,12 @@ public partial class MainViewModel : ViewModelBase
                 result.BaseAttack,
                 DamageType.Holy);
 
+
         HolyScaling =
             GetDisplayedValue(
                 result.ScalingBonus,
                 DamageType.Holy);
+
 
         HolyAr =
             GetDisplayedValue(
@@ -630,17 +668,21 @@ public partial class MainViewModel : ViewModelBase
             FormatScaling(
                 result.StrengthScaling);
 
+
         DexterityScalingDisplay =
             FormatScaling(
                 result.DexterityScaling);
+
 
         IntelligenceScalingDisplay =
             FormatScaling(
                 result.IntelligenceScaling);
 
+
         FaithScalingDisplay =
             FormatScaling(
                 result.FaithScaling);
+
 
         ArcaneScalingDisplay =
             FormatScaling(
@@ -650,12 +692,15 @@ public partial class MainViewModel : ViewModelBase
         WeaponRequirementWarning =
             result.RequirementsMet
                 ? ""
-                : "⚠ Os requisitos da arma não estão sendo atendidos. O AR está sofrendo penalidade.";
+                : "⚠ Os requisitos da arma não estão sendo atendidos. "
+                  +
+                  "O AR está sofrendo penalidade.";
     }
 
 
     private static int GetDisplayedValue(
-        System.Collections.Generic.Dictionary<DamageType, double>
+        System.Collections.Generic
+            .Dictionary<DamageType, double>
             values,
         DamageType damageType)
     {
@@ -931,44 +976,72 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
+    // =========================
+    // ARMADURA VAZIA
+    // =========================
+
     private void AddEmptyArmorSlots()
     {
         HeadArmor.Add(
             new ArmorPiece
             {
-                Name = "Nenhum",
-                Slot = ArmorSlot.Head,
-                IsNone = true
+                Name =
+                    "Nenhum",
+
+                Slot =
+                    ArmorSlot.Head,
+
+                IsNone =
+                    true
             });
 
 
         ChestArmor.Add(
             new ArmorPiece
             {
-                Name = "Nenhum",
-                Slot = ArmorSlot.Chest,
-                IsNone = true
+                Name =
+                    "Nenhum",
+
+                Slot =
+                    ArmorSlot.Chest,
+
+                IsNone =
+                    true
             });
 
 
         ArmArmor.Add(
             new ArmorPiece
             {
-                Name = "Nenhum",
-                Slot = ArmorSlot.Arms,
-                IsNone = true
+                Name =
+                    "Nenhum",
+
+                Slot =
+                    ArmorSlot.Arms,
+
+                IsNone =
+                    true
             });
 
 
         LegArmor.Add(
             new ArmorPiece
             {
-                Name = "Nenhum",
-                Slot = ArmorSlot.Legs,
-                IsNone = true
+                Name =
+                    "Nenhum",
+
+                Slot =
+                    ArmorSlot.Legs,
+
+                IsNone =
+                    true
             });
     }
 
+
+    // =========================
+    // TROCA DE BOSS
+    // =========================
 
     partial void OnSelectedBossChanged(
         Boss? value)
@@ -998,6 +1071,10 @@ public partial class MainViewModel : ViewModelBase
             BossPhases.FirstOrDefault();
     }
 
+
+    // =========================
+    // QUICK DAMAGE
+    // =========================
 
     [RelayCommand]
     private void CalculateDamage()
