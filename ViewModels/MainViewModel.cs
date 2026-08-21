@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,58 +29,70 @@ public partial class MainViewModel : ViewModelBase
     private readonly WeaponAttackCalculatorService
         _weaponAttackCalculator = new();
 
+    private readonly WeaponSkillService
+        _weaponSkillService = new();
 
-    // =========================
+    private readonly AshOfWarCompatibilityService
+        _ashCompatibilityService = new();
+
+
+    // ============================================================
     // ATRIBUTOS
-    // =========================
+    // ============================================================
 
     public PlayerStats Stats { get; } =
         new();
 
 
-    // =========================
+    // ============================================================
     // ARMAS
-    // =========================
+    // ============================================================
 
     public ObservableCollection<Weapon>
         Weapons { get; } = new();
 
 
     [ObservableProperty]
-    public partial Weapon? SelectedWeapon
+    public partial Weapon?
+        SelectedWeapon
         { get; set; }
 
 
     [ObservableProperty]
-    public partial decimal WeaponUpgradeLevel
+    public partial decimal
+        WeaponUpgradeLevel
         { get; set; }
 
 
     [ObservableProperty]
-    public partial decimal WeaponUpgradeMaximum
+    public partial decimal
+        WeaponUpgradeMaximum
         { get; set; } = 25m;
 
 
     [ObservableProperty]
-    public partial bool CanSelectAffinity
+    public partial bool
+        CanSelectAffinity
         { get; set; }
 
 
     [ObservableProperty]
-    public partial string WeaponCatalogStatus
+    public partial string
+        WeaponCatalogStatus
         { get; set; } =
         "Carregando armas...";
 
 
     [ObservableProperty]
-    public partial string AcquisitionCatalogStatus
+    public partial string
+        AcquisitionCatalogStatus
         { get; set; } =
         "Carregando dados de obtenção...";
 
 
-    // =========================
+    // ============================================================
     // AFINIDADES
-    // =========================
+    // ============================================================
 
     public ObservableCollection<WeaponAffinity>
         AvailableAffinities
@@ -93,9 +106,9 @@ public partial class MainViewModel : ViewModelBase
         WeaponAffinity.Standard;
 
 
-    // =========================
+    // ============================================================
     // ATTACK RATING
-    // =========================
+    // ============================================================
 
     [ObservableProperty]
     public partial int PhysicalBase
@@ -199,9 +212,9 @@ public partial class MainViewModel : ViewModelBase
         "Dados: regulation v1.14";
 
 
-    // =========================
+    // ============================================================
     // CINZAS DE GUERRA
-    // =========================
+    // ============================================================
 
     public ObservableCollection<AshOfWar>
         AshesOfWar { get; } = new();
@@ -213,9 +226,15 @@ public partial class MainViewModel : ViewModelBase
         { get; set; }
 
 
-    // =========================
+    [ObservableProperty]
+    public partial bool
+        CanSelectAshOfWar
+        { get; set; } = true;
+
+
+    // ============================================================
     // TALISMÃS
-    // =========================
+    // ============================================================
 
     public ObservableCollection<Talisman>
         Talismans { get; } = new();
@@ -226,18 +245,15 @@ public partial class MainViewModel : ViewModelBase
         SelectedTalisman1
         { get; set; }
 
-
     [ObservableProperty]
     public partial Talisman?
         SelectedTalisman2
         { get; set; }
 
-
     [ObservableProperty]
     public partial Talisman?
         SelectedTalisman3
         { get; set; }
-
 
     [ObservableProperty]
     public partial Talisman?
@@ -245,9 +261,9 @@ public partial class MainViewModel : ViewModelBase
         { get; set; }
 
 
-    // =========================
+    // ============================================================
     // BUFFS
-    // =========================
+    // ============================================================
 
     public ObservableCollection<Buff>
         AuraBuffs { get; } = new();
@@ -256,9 +272,9 @@ public partial class MainViewModel : ViewModelBase
         BodyBuffs { get; } = new();
 
 
-    // =========================
+    // ============================================================
     // ARMADURA
-    // =========================
+    // ============================================================
 
     public ObservableCollection<ArmorPiece>
         HeadArmor { get; } = new();
@@ -278,18 +294,15 @@ public partial class MainViewModel : ViewModelBase
         SelectedHeadArmor
         { get; set; }
 
-
     [ObservableProperty]
     public partial ArmorPiece?
         SelectedChestArmor
         { get; set; }
 
-
     [ObservableProperty]
     public partial ArmorPiece?
         SelectedArmArmor
         { get; set; }
-
 
     [ObservableProperty]
     public partial ArmorPiece?
@@ -297,9 +310,9 @@ public partial class MainViewModel : ViewModelBase
         { get; set; }
 
 
-    // =========================
+    // ============================================================
     // BOSSES
-    // =========================
+    // ============================================================
 
     public ObservableCollection<Boss>
         Bosses { get; } = new();
@@ -313,16 +326,15 @@ public partial class MainViewModel : ViewModelBase
         SelectedBoss
         { get; set; }
 
-
     [ObservableProperty]
     public partial BossPhase?
         SelectedBossPhase
         { get; set; }
 
 
-    // =========================
+    // ============================================================
     // QUICK DAMAGE
-    // =========================
+    // ============================================================
 
     [ObservableProperty]
     public partial decimal BaseDamage
@@ -339,9 +351,9 @@ public partial class MainViewModel : ViewModelBase
         { get; set; } = "";
 
 
-    // =========================
+    // ============================================================
     // CONSTRUTOR
-    // =========================
+    // ============================================================
 
     public MainViewModel()
     {
@@ -349,16 +361,18 @@ public partial class MainViewModel : ViewModelBase
             (_, _) =>
                 RecalculateWeaponAr();
 
+
         LoadTemporaryData();
+
 
         _ =
             LoadWeaponCatalogAsync();
     }
 
 
-    // =========================
-    // CARREGAR ARMAS
-    // =========================
+    // ============================================================
+    // CARREGAR CATÁLOGO
+    // ============================================================
 
     private async Task LoadWeaponCatalogAsync()
     {
@@ -367,11 +381,12 @@ public partial class MainViewModel : ViewModelBase
             WeaponCatalogStatus =
                 "Carregando catálogo de armas...";
 
+
             AcquisitionCatalogStatus =
                 "Carregando dados de obtenção...";
 
 
-            var loadedWeapons =
+            IReadOnlyList<Weapon> loadedWeapons =
                 await _weaponCatalogService
                     .LoadWeaponsAsync();
 
@@ -382,7 +397,7 @@ public partial class MainViewModel : ViewModelBase
                         loadedWeapons);
 
 
-            var missingWeapons =
+            IReadOnlyList<Weapon> missingWeapons =
                 await _weaponAcquisitionService
                     .GenerateMissingReportAsync(
                         loadedWeapons);
@@ -420,9 +435,7 @@ public partial class MainViewModel : ViewModelBase
                     AcquisitionCatalogStatus =
                         $"{acquisitionCount} armas com dados de obtenção. "
                         +
-                        $"{missingWeapons.Count} faltando. "
-                        +
-                        "Relatório gerado em Data/missing-weapon-acquisitions.txt";
+                        $"{missingWeapons.Count} faltando.";
                 });
         }
         catch (Exception exception)
@@ -435,6 +448,7 @@ public partial class MainViewModel : ViewModelBase
                         +
                         exception.Message;
 
+
                     AcquisitionCatalogStatus =
                         "Dados de obtenção indisponíveis.";
                 });
@@ -442,9 +456,9 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    // =========================
-    // TROCA DE ARMA
-    // =========================
+    // ============================================================
+    // TROCAR ARMA
+    // ============================================================
 
     partial void OnSelectedWeaponChanged(
         Weapon? value)
@@ -452,12 +466,28 @@ public partial class MainViewModel : ViewModelBase
         AvailableAffinities.Clear();
 
 
+        AshesOfWar.Clear();
+
+
         if (value is null)
         {
+            CanSelectAshOfWar =
+                false;
+
+
+            SelectedAshOfWar =
+                null;
+
+
             ResetWeaponAr();
+
 
             return;
         }
+
+
+        UpdateAshOfWarForSelectedWeapon(
+            value);
 
 
         WeaponUpgradeMaximum =
@@ -512,9 +542,180 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    // =========================
-    // TROCA DE AFINIDADE
-    // =========================
+    // ============================================================
+    // CINZA DE GUERRA
+    // ============================================================
+
+    private void UpdateAshOfWarForSelectedWeapon(
+        Weapon weapon)
+    {
+        WeaponSkillInfo skillInfo =
+            _weaponSkillService
+                .GetSkillInfo(
+                    weapon.Name);
+
+
+        // ========================================================
+        // SKILL FIXA
+        // ========================================================
+
+        if (skillInfo.IsFixed
+            &&
+            !string.IsNullOrWhiteSpace(
+                skillInfo.SkillName))
+        {
+            AshOfWar fixedSkill =
+                new AshOfWar
+                {
+                    Name =
+                        skillInfo.SkillName,
+
+                    NativeAffinity =
+                        WeaponAffinity.Standard,
+
+                    EffectDescription =
+                        "Skill fixa desta arma."
+                };
+
+
+            AshesOfWar.Add(
+                fixedSkill);
+
+
+            SelectedAshOfWar =
+                fixedSkill;
+
+
+            CanSelectAshOfWar =
+                false;
+
+
+            return;
+        }
+
+
+        // ========================================================
+        // ARMAS QUE NÃO ACEITAM ASH OF WAR
+        // ========================================================
+
+        if (!weapon.AllowsCustomAffinity)
+        {
+            if (!string.IsNullOrWhiteSpace(
+                    skillInfo.SkillName))
+            {
+                AshOfWar defaultSkill =
+                    new AshOfWar
+                    {
+                        Name =
+                            skillInfo.SkillName,
+
+                        NativeAffinity =
+                            WeaponAffinity.Standard,
+
+                        EffectDescription =
+                            "Skill padrão da arma."
+                    };
+
+
+                AshesOfWar.Add(
+                    defaultSkill);
+
+
+                SelectedAshOfWar =
+                    defaultSkill;
+            }
+            else
+            {
+                SelectedAshOfWar =
+                    null;
+            }
+
+
+            CanSelectAshOfWar =
+                false;
+
+
+            return;
+        }
+
+
+        // ========================================================
+        // BUSCAR APENAS AS ASHES COMPATÍVEIS
+        // ========================================================
+
+        List<AshOfWar> compatibleAshes =
+            _ashCompatibilityService
+                .GetCompatibleAshes(
+                    weapon);
+
+
+        foreach (
+            AshOfWar ash
+            in compatibleAshes)
+        {
+            AshesOfWar.Add(
+                ash);
+        }
+
+
+        // ========================================================
+        // SKILL PADRÃO DA ARMA
+        // ========================================================
+
+        if (!string.IsNullOrWhiteSpace(
+                skillInfo.SkillName))
+        {
+            AshOfWar? defaultAsh =
+                AshesOfWar
+                    .FirstOrDefault(
+                        ash =>
+                            string.Equals(
+                                ash.Name,
+                                skillInfo.SkillName,
+                                StringComparison.OrdinalIgnoreCase));
+
+
+            if (defaultAsh is null)
+            {
+                defaultAsh =
+                    new AshOfWar
+                    {
+                        Name =
+                            skillInfo.SkillName,
+
+                        NativeAffinity =
+                            WeaponAffinity.Standard,
+
+                        EffectDescription =
+                            "Skill padrão desta arma."
+                    };
+
+
+                AshesOfWar.Insert(
+                    0,
+                    defaultAsh);
+            }
+
+
+            SelectedAshOfWar =
+                defaultAsh;
+        }
+        else
+        {
+            SelectedAshOfWar =
+                AshesOfWar
+                    .FirstOrDefault();
+        }
+
+
+        CanSelectAshOfWar =
+            AshesOfWar.Count > 0;
+    }
+
+
+    // ============================================================
+    // TROCAR AFINIDADE
+    // ============================================================
 
     partial void OnSelectedAffinityChanged(
         WeaponAffinity value)
@@ -523,9 +724,9 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    // =========================
-    // TROCA DE UPGRADE
-    // =========================
+    // ============================================================
+    // TROCAR UPGRADE
+    // ============================================================
 
     partial void OnWeaponUpgradeLevelChanged(
         decimal value)
@@ -534,9 +735,9 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    // =========================
+    // ============================================================
     // RECALCULAR AR
-    // =========================
+    // ============================================================
 
     private void RecalculateWeaponAr()
     {
@@ -698,9 +899,12 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
+    // ============================================================
+    // VALOR PARA EXIBIÇÃO
+    // ============================================================
+
     private static int GetDisplayedValue(
-        System.Collections.Generic
-            .Dictionary<DamageType, double>
+        Dictionary<DamageType, double>
             values,
         DamageType damageType)
     {
@@ -717,6 +921,10 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
+    // ============================================================
+    // FORMATAR SCALING
+    // ============================================================
+
     private static string FormatScaling(
         double scaling)
     {
@@ -730,6 +938,10 @@ public partial class MainViewModel : ViewModelBase
             "0.000");
     }
 
+
+    // ============================================================
+    // RESET AR
+    // ============================================================
 
     private void ResetWeaponAr()
     {
@@ -765,34 +977,12 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    // =========================
+    // ============================================================
     // DADOS TEMPORÁRIOS
-    // =========================
+    // ============================================================
 
     private void LoadTemporaryData()
     {
-        AshesOfWar.Add(
-            new AshOfWar
-            {
-                Name =
-                    "Lion's Claw",
-
-                NativeAffinity =
-                    WeaponAffinity.Heavy
-            });
-
-
-        AshesOfWar.Add(
-            new AshOfWar
-            {
-                Name =
-                    "Unsheathe",
-
-                NativeAffinity =
-                    WeaponAffinity.Keen
-            });
-
-
         var noTalisman =
             new Talisman
             {
@@ -941,10 +1131,6 @@ public partial class MainViewModel : ViewModelBase
             malenia);
 
 
-        SelectedAshOfWar =
-            AshesOfWar.FirstOrDefault();
-
-
         SelectedTalisman1 =
             noTalisman;
 
@@ -961,11 +1147,14 @@ public partial class MainViewModel : ViewModelBase
         SelectedHeadArmor =
             HeadArmor.FirstOrDefault();
 
+
         SelectedChestArmor =
             ChestArmor.FirstOrDefault();
 
+
         SelectedArmArmor =
             ArmArmor.FirstOrDefault();
+
 
         SelectedLegArmor =
             LegArmor.FirstOrDefault();
@@ -976,9 +1165,9 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    // =========================
-    // ARMADURA VAZIA
-    // =========================
+    // ============================================================
+    // ARMADURAS VAZIAS
+    // ============================================================
 
     private void AddEmptyArmorSlots()
     {
@@ -1039,9 +1228,9 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    // =========================
-    // TROCA DE BOSS
-    // =========================
+    // ============================================================
+    // TROCAR BOSS
+    // ============================================================
 
     partial void OnSelectedBossChanged(
         Boss? value)
@@ -1072,16 +1261,17 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    // =========================
+    // ============================================================
     // QUICK DAMAGE
-    // =========================
+    // ============================================================
 
     [RelayCommand]
     private void CalculateDamage()
     {
         var selectedBuffs =
             AuraBuffs
-                .Concat(BodyBuffs)
+                .Concat(
+                    BodyBuffs)
                 .Where(
                     buff =>
                         buff.IsSelected)

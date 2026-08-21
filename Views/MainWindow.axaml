@@ -239,6 +239,7 @@
                                 Text="{Binding SelectedWeapon.AcquisitionSourceDisplay}"
                                 FontSize="11"
                                 Opacity="0.55"/>
+
                         </StackPanel>
 
                     </Border>
@@ -263,8 +264,28 @@
                         Text="Cinza de Guerra"/>
 
                     <ComboBox
+                        Width="280"
+                        HorizontalAlignment="Left"
                         ItemsSource="{Binding AshesOfWar}"
-                        SelectedItem="{Binding SelectedAshOfWar}"/>
+                        SelectedItem="{Binding SelectedAshOfWar}"
+                        IsEnabled="{Binding CanSelectAshOfWar}"
+                        MaxDropDownHeight="350">
+
+                        <ComboBox.ItemTemplate>
+
+                            <DataTemplate
+                                x:DataType="models:AshOfWar">
+
+                                <TextBlock
+                                    Text="{Binding Name}"
+                                    Width="235"
+                                    TextTrimming="CharacterEllipsis"/>
+
+                            </DataTemplate>
+
+                        </ComboBox.ItemTemplate>
+
+                    </ComboBox>
 
 
                     <!-- AFINIDADE -->
@@ -273,6 +294,8 @@
                         Text="Afinidade"/>
 
                     <ComboBox
+                        Width="180"
+                        HorizontalAlignment="Left"
                         ItemsSource="{Binding AvailableAffinities}"
                         SelectedItem="{Binding SelectedAffinity}"
                         IsEnabled="{Binding CanSelectAffinity}"/>
@@ -304,60 +327,149 @@
                                 TextWrapping="Wrap"/>
 
 
-                            <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Text="Physical:" Width="100"/>
-                                <TextBlock Text="{Binding PhysicalBase}"/>
+                            <!-- PHYSICAL -->
+
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Spacing="6">
+
+                                <TextBlock
+                                    Text="Physical:"
+                                    Width="90"/>
+
+                                <TextBlock
+                                    Text="{Binding PhysicalBase}"/>
+
                                 <TextBlock Text="+"/>
-                                <TextBlock Text="{Binding PhysicalScaling}"/>
+
+                                <TextBlock
+                                    Text="{Binding PhysicalScaling}"/>
+
                                 <TextBlock Text="="/>
-                                <TextBlock Text="{Binding PhysicalAr}" FontWeight="Bold"/>
+
+                                <TextBlock
+                                    Text="{Binding PhysicalAr}"
+                                    FontWeight="Bold"/>
+
                             </StackPanel>
 
 
-                            <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Text="Magic:" Width="100"/>
-                                <TextBlock Text="{Binding MagicBase}"/>
+                            <!-- MAGIC -->
+
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Spacing="6">
+
+                                <TextBlock
+                                    Text="Magic:"
+                                    Width="90"/>
+
+                                <TextBlock
+                                    Text="{Binding MagicBase}"/>
+
                                 <TextBlock Text="+"/>
-                                <TextBlock Text="{Binding MagicScaling}"/>
+
+                                <TextBlock
+                                    Text="{Binding MagicScaling}"/>
+
                                 <TextBlock Text="="/>
-                                <TextBlock Text="{Binding MagicAr}" FontWeight="Bold"/>
+
+                                <TextBlock
+                                    Text="{Binding MagicAr}"
+                                    FontWeight="Bold"/>
+
                             </StackPanel>
 
 
-                            <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Text="Fire:" Width="100"/>
-                                <TextBlock Text="{Binding FireBase}"/>
+                            <!-- FIRE -->
+
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Spacing="6">
+
+                                <TextBlock
+                                    Text="Fire:"
+                                    Width="90"/>
+
+                                <TextBlock
+                                    Text="{Binding FireBase}"/>
+
                                 <TextBlock Text="+"/>
-                                <TextBlock Text="{Binding FireScaling}"/>
+
+                                <TextBlock
+                                    Text="{Binding FireScaling}"/>
+
                                 <TextBlock Text="="/>
-                                <TextBlock Text="{Binding FireAr}" FontWeight="Bold"/>
+
+                                <TextBlock
+                                    Text="{Binding FireAr}"
+                                    FontWeight="Bold"/>
+
                             </StackPanel>
 
 
-                            <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Text="Lightning:" Width="100"/>
-                                <TextBlock Text="{Binding LightningBase}"/>
+                            <!-- LIGHTNING -->
+
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Spacing="6">
+
+                                <TextBlock
+                                    Text="Lightning:"
+                                    Width="90"/>
+
+                                <TextBlock
+                                    Text="{Binding LightningBase}"/>
+
                                 <TextBlock Text="+"/>
-                                <TextBlock Text="{Binding LightningScaling}"/>
+
+                                <TextBlock
+                                    Text="{Binding LightningScaling}"/>
+
                                 <TextBlock Text="="/>
-                                <TextBlock Text="{Binding LightningAr}" FontWeight="Bold"/>
+
+                                <TextBlock
+                                    Text="{Binding LightningAr}"
+                                    FontWeight="Bold"/>
+
                             </StackPanel>
 
 
-                            <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Text="Holy:" Width="100"/>
-                                <TextBlock Text="{Binding HolyBase}"/>
+                            <!-- HOLY -->
+
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Spacing="6">
+
+                                <TextBlock
+                                    Text="Holy:"
+                                    Width="90"/>
+
+                                <TextBlock
+                                    Text="{Binding HolyBase}"/>
+
                                 <TextBlock Text="+"/>
-                                <TextBlock Text="{Binding HolyScaling}"/>
+
+                                <TextBlock
+                                    Text="{Binding HolyScaling}"/>
+
                                 <TextBlock Text="="/>
-                                <TextBlock Text="{Binding HolyAr}" FontWeight="Bold"/>
+
+                                <TextBlock
+                                    Text="{Binding HolyAr}"
+                                    FontWeight="Bold"/>
+
                             </StackPanel>
 
 
                             <Separator/>
 
 
-                            <StackPanel Orientation="Horizontal" Spacing="10">
+                            <!-- TOTAL -->
+
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Spacing="10">
 
                                 <TextBlock
                                     Text="TOTAL AR:"
@@ -371,6 +483,8 @@
 
                             </StackPanel>
 
+
+                            <!-- SCALING -->
 
                             <TextBlock
                                 Text="Attribute Scaling"
@@ -421,7 +535,10 @@
 
             <!-- TALISMÃS -->
 
-            <Border Padding="15" BorderThickness="1" CornerRadius="8">
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
 
                 <StackPanel Spacing="10">
 
@@ -461,7 +578,10 @@
 
             <!-- BUFFS -->
 
-            <Border Padding="15" BorderThickness="1" CornerRadius="8">
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
 
                 <StackPanel Spacing="15">
 
@@ -477,21 +597,30 @@
                         FontWeight="Bold"/>
 
 
-                    <ItemsControl ItemsSource="{Binding AuraBuffs}">
+                    <ItemsControl
+                        ItemsSource="{Binding AuraBuffs}">
 
                         <ItemsControl.ItemTemplate>
 
-                            <DataTemplate x:DataType="models:Buff">
+                            <DataTemplate
+                                x:DataType="models:Buff">
 
                                 <CheckBox
                                     IsChecked="{Binding IsSelected}"
                                     Margin="0,4">
 
-                                    <StackPanel Orientation="Horizontal" Spacing="4">
+                                    <StackPanel
+                                        Orientation="Horizontal"
+                                        Spacing="4">
 
-                                        <TextBlock Text="{Binding Name}"/>
+                                        <TextBlock
+                                            Text="{Binding Name}"/>
+
                                         <TextBlock Text=":"/>
-                                        <TextBlock Text="{Binding DamageBonusPercent}"/>
+
+                                        <TextBlock
+                                            Text="{Binding DamageBonusPercent}"/>
+
                                         <TextBlock Text="%"/>
 
                                     </StackPanel>
@@ -512,21 +641,30 @@
                         Margin="0,10,0,0"/>
 
 
-                    <ItemsControl ItemsSource="{Binding BodyBuffs}">
+                    <ItemsControl
+                        ItemsSource="{Binding BodyBuffs}">
 
                         <ItemsControl.ItemTemplate>
 
-                            <DataTemplate x:DataType="models:Buff">
+                            <DataTemplate
+                                x:DataType="models:Buff">
 
                                 <CheckBox
                                     IsChecked="{Binding IsSelected}"
                                     Margin="0,4">
 
-                                    <StackPanel Orientation="Horizontal" Spacing="4">
+                                    <StackPanel
+                                        Orientation="Horizontal"
+                                        Spacing="4">
 
-                                        <TextBlock Text="{Binding Name}"/>
+                                        <TextBlock
+                                            Text="{Binding Name}"/>
+
                                         <TextBlock Text=":"/>
-                                        <TextBlock Text="{Binding DamageBonusPercent}"/>
+
+                                        <TextBlock
+                                            Text="{Binding DamageBonusPercent}"/>
+
                                         <TextBlock Text="%"/>
 
                                     </StackPanel>
@@ -546,7 +684,10 @@
 
             <!-- ARMADURA -->
 
-            <Border Padding="15" BorderThickness="1" CornerRadius="8">
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
 
                 <StackPanel Spacing="10">
 
@@ -586,7 +727,10 @@
 
             <!-- BOSS -->
 
-            <Border Padding="15" BorderThickness="1" CornerRadius="8">
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
 
                 <StackPanel Spacing="10">
 
@@ -614,7 +758,10 @@
 
             <!-- QUICK DAMAGE -->
 
-            <Border Padding="15" BorderThickness="1" CornerRadius="8">
+            <Border
+                Padding="15"
+                BorderThickness="1"
+                CornerRadius="8">
 
                 <StackPanel Spacing="12">
 
@@ -623,7 +770,8 @@
                         FontSize="22"
                         FontWeight="Bold"/>
 
-                    <TextBlock Text="Dano sem buffs:"/>
+                    <TextBlock
+                        Text="Dano sem buffs:"/>
 
                     <NumericUpDown
                         Value="{Binding BaseDamage}"
